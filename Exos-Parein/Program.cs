@@ -422,6 +422,85 @@ namespace ExosParein
             // affiche Jean|Luc|Abess|kadour
             Console.WriteLine(strNom2);
 
+            // ***************** Array ***********************************************************
+            Console.WriteLine("\n **************** le Array ****************************\n");
+
+            string[] tableau1 = {"Java" , "C#" , "Python" , "Cobol" , "C#" };
+            string[] tableau2 = new string[tableau1.Length];
+
+            // Copie le tanbleau2 dans tableau1
+            Array.Copy(tableau1, tableau2, tableau1.Length);
+
+            // Supprime le premier elt de tableau2 à partir de l'index 0, enbre d'elts à supprimer
+            Array.Clear(tableau2, 0, 1);
+
+            foreach (string item in tableau2)
+            {
+                Console.WriteLine(item);
+            }
+
+            // recherche de l'index de "Python"
+            Console.WriteLine($"l'index de 'Python' est : {Array.IndexOf(tableau1 , "Python")}");
+
+            // recherche de l'index du deuxième 'C#'
+            Console.WriteLine($"l'index du deuxième 'C#' est : {Array.LastIndexOf(tableau1, "C#")}");
+
+            //reverse d'un tableau
+            Console.WriteLine("********** Reverse() d'un tableau *****************************");
+            Array.Reverse(tableau1);
+
+            foreach (string item in tableau1)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Sort trie du tableau
+            Console.WriteLine("********** Sort() Tri d'un tableau *****************************");
+
+            Array.Sort(tableau1);
+
+            foreach (string item in tableau1)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Reverse() de Sort trie 
+            Console.WriteLine("********** Reverse() de sort() d'un tableau *****************************");
+
+            Array.Reverse(tableau1);
+
+            foreach (string item in tableau1)
+            {
+                Console.WriteLine(item);
+            }
+
+            // resize() d'un tableau en 10 elts
+            Array.Resize(ref tableau1, 10);
+
+            foreach (string item in tableau1)
+            {
+                Console.WriteLine(item);
+            }
+
+            // rajouter trois elts dans tableau1
+            tableau1[5] = "Toto";
+            tableau1[6] = "Ammar";
+            tableau1[9] = "Dadou";
+
+            foreach (string item in tableau1)
+            {
+                Console.WriteLine(item);
+            }
+
+            // Vider un tableau
+            tableau2 = null;
+            foreach (string item in tableau1)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
             Console.Read();
 
         }
